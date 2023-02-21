@@ -3,29 +3,22 @@ const http = require("http")
 const app = express()
 const server = http.createServer(app)
 
-
 const io = require("socket.io")(server, {
     cors: {
-        origin: ["*:*", "https://hr-admin-2q58pm838-potatogitgit.vercel.app/", "http://localhost:3000"],
+        origin: ["https://tm-frontend-eight.vercel.app/", "https://hr-admin-xi.vercel.app/"],
         methods: ["GET", "POST"]
     }
 })
-
-
-
-
 
 
 io.on("connection", (socket) => {
 
 
     socket.on("test", function (msg) {
+
+        console.log(msg.name)
         io.emit("testServer", msg)
     })
-
-
-
-
 
 
 })
