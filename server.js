@@ -24,5 +24,9 @@ io.on("connection", (socket) => {
 
 })
 
+app.get("/", (req, res) => {
+    res.send('This is working')
+})
+
 server.listen(5000, () => console.log("server is running on port 5000"))
 
