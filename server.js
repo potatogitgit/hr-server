@@ -1,21 +1,15 @@
 const express = require("express")
-const http = require("https")
+const http = require("http")
 const app = express()
+const cors = require('cors')
 
-const httpServer = http.createServer(
-    function (request, response) {
+app.use(cors())
+const server = http.createServer(app)
 
-        // Setting up Headers
-        response.setHeader('Content-Type', 'text/html');
-        response.setHeader('Set-Cookie', ['type=ninja',
-            'language=javascript']);
-        response.setHeader('Access-Control-Allow-Origin')
 
-    })
-
-const io = require("socket.io")(httpServer, {
+const io = require("socket.io")(server, {
     cors: {
-        origin: ["https://hr-admin-2q58pm838-potatogitgit.vercel.app", "http://localhost:3000"],
+        origin: ["https://hr-admin-2q58pm838-potatogitgit.vercel.app/", "http://localhost:3000"],
         methods: ["GET", "POST"]
     }
 })
