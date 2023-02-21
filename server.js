@@ -4,7 +4,7 @@ const app = express()
 const server = http.createServer(app)
 const io = require("socket.io")(server, {
     cors: {
-        origin: ["http://localhost:3007", "http://localhost:3000"],
+        origin: ["https://hr-admin-2q58pm838-potatogitgit.vercel.app", "http://localhost:3000"],
         methods: ["GET", "POST"]
     }
 })
