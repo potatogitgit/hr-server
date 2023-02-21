@@ -10,6 +10,7 @@ fetch("https://hr-server-dun.vercel.app/socket.io/", {
 const io = require("socket.io")(server, {
     cors: {
         origin: ["https://hr-admin-2q58pm838-potatogitgit.vercel.app/", "http://localhost:3000"],
+        header: "Access-Control-Allow-Origin",
         methods: ["GET", "POST"]
     }
 })
