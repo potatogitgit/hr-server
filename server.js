@@ -3,17 +3,14 @@ const http = require("http")
 const app = express()
 const server = http.createServer(app)
 
-fetch("https://hr-server-dun.vercel.app/socket.io/", {
-    mode: 'no-cors'
-})
 
 const io = require("socket.io")(server, {
     cors: {
-        origin: ["https://hr-admin-2q58pm838-potatogitgit.vercel.app/", "http://localhost:3000"],
-        header: "Access-Control-Allow-Origin",
+        origin: ["*:*", "https://hr-admin-2q58pm838-potatogitgit.vercel.app/", "http://localhost:3000"],
         methods: ["GET", "POST"]
     }
 })
+
 
 
 io.on("connection", (socket) => {
