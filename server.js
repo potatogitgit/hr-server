@@ -3,7 +3,7 @@ const http = require("http")
 const app = express()
 const server = http.createServer(app)
 
-fetch("https://hr-server-dun.vercel.app/", {
+fetch("https://hr-server-dun.vercel.app/socket.io/", {
     mode: 'no-cors'
 })
 
