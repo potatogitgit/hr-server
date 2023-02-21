@@ -9,10 +9,11 @@ var httpServer = http.createServer(
         response.setHeader('Content-Type', 'text/html');
         response.setHeader('Set-Cookie', ['type=ninja',
             'language=javascript']);
-        response.setHeader('Access-Control-Allow-Origin', '*')
+        response.setHeader('Access-Control-Allow-Origin')
+
     })
 
-const io = require("socket.io")(server, {
+const io = require("socket.io")(httpServer, {
     cors: {
         origin: ["https://hr-admin-2q58pm838-potatogitgit.vercel.app", "http://localhost:3000"],
         methods: ["GET", "POST"]
