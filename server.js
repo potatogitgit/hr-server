@@ -5,8 +5,9 @@ const server = http.createServer(app)
 
 const io = require("socket.io")(server, {
     cors: {
-        origin: ["https://tm-frontend-eight.vercel.app/", "https://hr-admin-xi.vercel.app/"],
-        methods: ["GET", "POST"]
+        origin: '*',
+        methods: ['GET', 'POST'],
+        header: 'Access-Control-Allow-Origin'
     }
 })
 
