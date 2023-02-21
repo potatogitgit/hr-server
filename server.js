@@ -2,7 +2,7 @@ const express = require("express")
 const http = require("https")
 const app = express()
 
-var httpServer = http.createServer(
+const httpServer = http.createServer(
     function (request, response) {
 
         // Setting up Headers
