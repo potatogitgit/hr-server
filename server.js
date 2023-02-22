@@ -17,10 +17,8 @@ io.on("connection", (socket) => {
 
     socket.on("test", function (msg) {
 
-        console.log(msg)
-
-        //io.emit("fromserver", { msg })
-        socket.emit("fromserver", { msg })
+        io.emit("fromserver", { msg })
+        //socket.emit("fromserver", { msg })
 
     })
 
