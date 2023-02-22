@@ -15,11 +15,11 @@ const io = require("socket.io")(server, {
 io.on("connection", (socket) => {
 
     socket.once("test", function (msg) {
-        //io.emit("testServer", msg)
+
         console.log("Server: " + msg)
 
-
-        socket.emit("fromserver", "hey")
+        io.emit("fromserver", msg)
+        socket.emit("fromserver", msg)
 
     })
 
