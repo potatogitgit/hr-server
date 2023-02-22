@@ -7,6 +7,7 @@ const server = http.createServer(app)
 const io = require("socket.io")(server, {
     cors: {
         origin: '*',
+        //origin: ['http://localhost:3000', 'http://localhost:3007'],
         methods: ['GET', 'POST'],
     }
 })
@@ -14,15 +15,14 @@ const io = require("socket.io")(server, {
 
 io.on("connection", (socket) => {
 
-    socket.once("test", function (msg) {
+    socket.on("test", function (msg) {
 
-        console.log("Server: " + msg)
+        console.log(msg)
 
         io.emit("fromserver", msg)
-        socket.emit("fromserver", msg)
+        //socket.emit("fromserver", msg)
 
     })
-
 
 
 })
