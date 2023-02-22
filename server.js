@@ -19,7 +19,7 @@ io.on("connection", (socket) => {
 
         console.log(msg)
 
-        io.emit("fromserver", msg)
+        io.emit("fromserver", { msg })
         //socket.emit("fromserver", msg)
 
     })
