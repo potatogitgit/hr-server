@@ -14,7 +14,7 @@ const io = require("socket.io")(server, {
 
 io.on("connection", (socket) => {
 
-    socket.on("test", function (msg) {
+    socket.once("test", function (msg) {
         //io.emit("testServer", msg)
         console.log("Server: " + msg)
 
